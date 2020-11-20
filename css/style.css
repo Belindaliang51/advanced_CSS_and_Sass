@@ -1,220 +1,163 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
 /* basic reset, universial selector, select each element of the page, apply the decoration to the page */
 /* any "::after" and "::before" in the project will NOT get this behavior, only the real elements gets this behavior, to avoid strange behaviors later */
 *,
 *::after,
-*::before{
-    margin:0;
-    padding:0;
-    box-sizing: inherit; /*each element will be inherit to its parent element, relate to the "body"selector box-sizing*/
-}
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /*each element will be inherit to its parent element, relate to the "body"selector box-sizing*/ }
 
 /* setting the root font-size, so that other font-sizes will change depends on it */
 /* 1rem = 10 x parent font-size */
-
-html{
-    font-size:62.5%;
-    /* font-size:10px;  10/16=62.5%*/
-    /* inital font-size = 16px (100%) */
-}
+html {
+  font-size: 62.5%;
+  /* font-size:10px;  10/16=62.5%*/
+  /* inital font-size = 16px (100%) */ }
 
 /* properties related to font is inherited, so edit in body element */
-body{
-     font-family: "Lato", sans-serif;
-     /* font-size:16px; */
-     line-height: 1.7;
-     columns: #777;
-     padding:30px;
-
-     box-sizing: border-box;
-}
+body {
+  font-family: "Lato", sans-serif;
+  /* font-size:16px; */
+  line-height: 1.7;
+  columns: #777;
+  padding: 30px;
+  box-sizing: border-box; }
 
 /* height is 95% of the viewport */
 /* backgroud image linear-gradient adding on the top of the image, defined by coding order*/
-.header{
-    height: 95vh;
-    background-image:linear-gradient(
-        to right bottom,
-        #7ed56fc4, #28b485b9),
-    url(../img/hero.jpg);
-    background-size:cover;
-    background-position-y: top;
-
-    /* clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0%,100%); */
-    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
-    position: relative;
-}
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position-y: top;
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0%,100%); */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+  position: relative; }
 
 .header__logo-box {
-    position: absolute;
-    left:4rem;
-    top:4rem;
-}
+  position: absolute;
+  left: 4rem;
+  top: 4rem; }
+
 .header__logo {
-    height: 4rem;
-}
+  height: 4rem; }
 
 .header__text-box {
-    position: absolute;
-    top:40%;
-    left:50%;
-    transform:translate(-50%, -50%);
-    /* shift the left side 50% of where the box X(left) and Y(top) coordinate starts from */
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* shift the left side 50% of where the box X(left) and Y(top) coordinate starts from */
+  text-align: center;
+  /* relating to the discover out tour area, does not need to adjust its position separately */ }
 
-    text-align:center;
-    /* relating to the discover out tour area, does not need to adjust its position separately */
-    
-}
-.heading-primary{
-    color:#fff;
-    text-transform: uppercase;
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* to hide the shake effect after the @animation */
+  margin-bottom: 6rem; }
 
-    backface-visibility: hidden;
-    /* to hide the shake effect after the @animation */
+.heading-primary--main {
+  display: block;
+  font-size: 6rem;
+  font-weight: 400;
+  letter-spacing: 3.5rem;
+  animation-name: moveInLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-delay: 0.5s;
+  /* animation-iteration-count: 3; */ }
 
-    margin-bottom: 6rem;
-
-}
-
-.heading-primary--main{
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-
-    animation-name: moveInLeft;
-    animation-duration: 3s;
-    animation-timing-function: ease-in;
-    animation-delay:0.5s;
-    /* animation-iteration-count: 3; */
-    
-    
-}
-
-.heading-primary--sub{
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-
-    animation-name: moveInRight;
-    animation-duration: 3s;
-    animation-timing-function: ease-in;
-    animation-delay:0.5s;
-}
+.heading-primary--sub {
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 1.75rem;
+  animation-name: moveInRight;
+  animation-duration: 3s;
+  animation-timing-function: ease-in;
+  animation-delay: 0.5s; }
 
 /* Animation */
-@keyframes moveInLeft{
-    0%{
-        opacity: 0;
-        transform: translateX(-100px);
-
-    }
-    80%{
-         transform: translateX(10px);
-    }
-    100%{
-        opacity: 1;
-        transform: translate(0);
-    }
-}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px); }
+  80% {
+    transform: translateX(10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 @keyframes moveInRight {
-    0% {
-        opacity: 0;
-        transform: translateX(100px);
-
-    }
-
-    80% {
-        transform: translateX(-10px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translateX(100px); }
+  80% {
+    transform: translateX(-10px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 @keyframes moveInBottom {
-    0% {
-        opacity: 0;
-        transform: translateY(100px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translate(0);
-    }
-}
+  0% {
+    opacity: 0;
+    transform: translateY(100px); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 .btn:link,
-.btn.visited{
-    /* btn setting */
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 1.5rem 4.0rem;
-    display: inline-block;
-    border-radius: 10rem;
-    /* transition:all .2s; */
+.btn.visited {
+  /* btn setting */
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 1.5rem 4.0rem;
+  display: inline-block;
+  border-radius: 10rem;
+  /* transition:all .2s; */
+  font-size: 1.5rem;
+  position: relative; }
 
-    font-size:1.5rem;
+.btn:hover {
+  /* when hover over the btn */
+  transform: translateY(-0.3rem);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
 
-    position: relative;
-}
+.btn:active {
+  /* when click on the btn */
+  transform: translateY(-0.3rem);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
 
-.btn:hover{
-    /* when hover over the btn */
-    transform:translateY(-0.3rem);
-    box-shadow: 0 1rem 2rem rgba(0,0,0,0.2);
-}
-.btn:active{
-    /* when click on the btn */
-    transform: translateY(-0.3rem);
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-}
-
-.btn--white{
-    background-color: #fff;
-    color:#777;
-}
+.btn--white {
+  background-color: #fff;
+  color: #777; }
 
 /* pseudo:: after: the element behind */
 /* persudo::after as the child element of the parent element, the display, height, width are setting align with the original btn setting*/
-.btn::after{
-    content:"";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  /* position setting, to the parent element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  /* transition: all 0.4s; */ }
 
-    /* position setting, to the parent element */
-    position: absolute;
-    top:0;
-    left:0;
-    z-index: -1;
+.btn--white::after {
+  background-color: #fff;
+  border-radius: 10rem; }
 
-    /* transition: all 0.4s; */
-}
+.btn:hover::after {
+  transform: scale(1.5);
+  opacity: 0;
+  transition: all 0.6s; }
 
-.btn--white::after{
-    background-color: #fff;
-    border-radius: 10rem;
-}
-
-.btn:hover::after{
-    transform: scale(1.5);
-    opacity: 0;
-    transition: all 0.6s;
-}
-
-.btn--animated{
-    animation:moveInBottom 2s ease-out .75s;
-    animation-fill-mode: backwards;
-}
+.btn--animated {
+  animation: moveInBottom 2s ease-out .75s;
+  animation-fill-mode: backwards; }
