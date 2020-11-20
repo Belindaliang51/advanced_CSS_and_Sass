@@ -1,3 +1,11 @@
+/*
+COLORS:
+
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+
+*/
 /* basic reset, universial selector, select each element of the page, apply the decoration to the page */
 /* any "::after" and "::before" in the project will NOT get this behavior, only the real elements gets this behavior, to avoid strange behaviors later */
 *,
@@ -34,23 +42,20 @@ body {
   /* clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0%,100%); */
   clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
   position: relative; }
-
-.header__logo-box {
-  position: absolute;
-  left: 4rem;
-  top: 4rem; }
-
-.header__logo {
-  height: 4rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  /* shift the left side 50% of where the box X(left) and Y(top) coordinate starts from */
-  text-align: center;
-  /* relating to the discover out tour area, does not need to adjust its position separately */ }
+  .header__logo-box {
+    position: absolute;
+    left: 4rem;
+    top: 4rem; }
+  .header__logo {
+    height: 4rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* shift the left side 50% of where the box X(left) and Y(top) coordinate starts from */
+    text-align: center;
+    /* relating to the discover out tour area, does not need to adjust its position separately */ }
 
 .heading-primary {
   color: #fff;
@@ -58,27 +63,25 @@ body {
   backface-visibility: hidden;
   /* to hide the shake effect after the @animation */
   margin-bottom: 6rem; }
-
-.heading-primary--main {
-  display: block;
-  font-size: 6rem;
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: moveInLeft;
-  animation-duration: 3s;
-  animation-timing-function: ease-in;
-  animation-delay: 0.5s;
-  /* animation-iteration-count: 3; */ }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2rem;
-  font-weight: 700;
-  letter-spacing: 1.75rem;
-  animation-name: moveInRight;
-  animation-duration: 3s;
-  animation-timing-function: ease-in;
-  animation-delay: 0.5s; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.5s;
+    /* animation-iteration-count: 3; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.5s; }
 
 /* Animation */
 @keyframes moveInLeft {
@@ -109,55 +112,48 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
-.btn:link,
-.btn.visited {
-  /* btn setting */
-  text-decoration: none;
-  text-transform: uppercase;
-  padding: 1.5rem 4.0rem;
-  display: inline-block;
-  border-radius: 10rem;
-  /* transition:all .2s; */
-  font-size: 1.5rem;
-  position: relative; }
-
-.btn:hover {
-  /* when hover over the btn */
-  transform: translateY(-0.3rem);
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
-
-.btn:active {
-  /* when click on the btn */
-  transform: translateY(-0.3rem);
-  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
-
-.btn--white {
-  background-color: #fff;
-  color: #777; }
-
-/* pseudo:: after: the element behind */
-/* persudo::after as the child element of the parent element, the display, height, width are setting align with the original btn setting*/
-.btn::after {
-  content: "";
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  /* position setting, to the parent element */
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  /* transition: all 0.4s; */ }
-
-.btn--white::after {
-  background-color: #fff;
-  border-radius: 10rem; }
-
-.btn:hover::after {
-  transform: scale(1.5);
-  opacity: 0;
-  transition: all 0.6s; }
-
-.btn--animated {
-  animation: moveInBottom 2s ease-out .75s;
-  animation-fill-mode: backwards; }
+.btn {
+  /* pseudo:: after: the element behind */
+  /* persudo::after as the child element of the parent element, the display, height, width are setting align with the original btn setting*/ }
+  .btn:link, .btn.visited {
+    /* btn setting */
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 1.5rem 4.0rem;
+    display: inline-block;
+    border-radius: 10rem;
+    /* transition:all .2s; */
+    font-size: 1.5rem;
+    position: relative; }
+  .btn:hover {
+    /* when hover over the btn */
+    transform: translateY(-0.3rem);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+    .btn:hover::after {
+      transform: scale(1.5);
+      opacity: 0;
+      transition: all 0.6s; }
+  .btn:active {
+    /* when click on the btn */
+    transform: translateY(-0.3rem);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+  .btn--white {
+    background-color: #fff;
+    color: #777; }
+    .btn--white::after {
+      background-color: #fff;
+      border-radius: 10rem; }
+  .btn::after {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    /* position setting, to the parent element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* transition: all 0.4s; */ }
+  .btn--animated {
+    animation: moveInBottom 2s ease-out .75s;
+    animation-fill-mode: backwards; }
