@@ -1,88 +1,3 @@
-/*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
-
-*/
-/* basic reset, universial selector, select each element of the page, apply the decoration to the page */
-/* any "::after" and "::before" in the project will NOT get this behavior, only the real elements gets this behavior, to avoid strange behaviors later */
-*,
-*::after,
-*::before {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-  /*each element will be inherit to its parent element, relate to the "body"selector box-sizing*/ }
-
-/* setting the root font-size, so that other font-sizes will change depends on it */
-/* 1rem = 10 x parent font-size */
-html {
-  font-size: 62.5%;
-  /* font-size:10px;  10/16=62.5%*/
-  /* inital font-size = 16px (100%) */ }
-
-/* properties related to font is inherited, so edit in body element */
-body {
-  font-family: "Lato", sans-serif;
-  /* font-size:16px; */
-  line-height: 1.7;
-  columns: #777;
-  padding: 30px;
-  box-sizing: border-box; }
-
-/* height is 95% of the viewport */
-/* backgroud image linear-gradient adding on the top of the image, defined by coding order*/
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position-y: top;
-  /* clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0%,100%); */
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
-  position: relative; }
-  .header__logo-box {
-    position: absolute;
-    left: 4rem;
-    top: 4rem; }
-  .header__logo {
-    height: 4rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* shift the left side 50% of where the box X(left) and Y(top) coordinate starts from */
-    text-align: center;
-    /* relating to the discover out tour area, does not need to adjust its position separately */ }
-
-.heading-primary {
-  color: #fff;
-  text-transform: uppercase;
-  backface-visibility: hidden;
-  /* to hide the shake effect after the @animation */
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation-name: moveInLeft;
-    animation-duration: 3s;
-    animation-timing-function: ease-in;
-    animation-delay: 0.5s;
-    /* animation-iteration-count: 3; */ }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation-name: moveInRight;
-    animation-duration: 3s;
-    animation-timing-function: ease-in;
-    animation-delay: 0.5s; }
-
 /* Animation */
 @keyframes moveInLeft {
   0% {
@@ -111,6 +26,60 @@ body {
   100% {
     opacity: 1;
     transform: translate(0); } }
+
+/* basic reset, universial selector, select each element of the page, apply the decoration to the page */
+/* any "::after" and "::before" in the project will NOT get this behavior, only the real elements gets this behavior, to avoid strange behaviors later */
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /*each element will be inherit to its parent element, relate to the "body"selector box-sizing*/ }
+
+/* setting the root font-size, so that other font-sizes will change depends on it */
+/* 1rem = 10 x parent font-size */
+html {
+  font-size: 62.5%;
+  /* font-size:10px;  10/16=62.5%*/
+  /* inital font-size = 16px (100%) */ }
+
+body {
+  box-sizing: border-box; }
+
+/* properties related to font is inherited, so edit in body element */
+body {
+  font-family: "Lato", sans-serif;
+  /* font-size:16px; */
+  line-height: 1.7;
+  columns: #777;
+  padding: 30px; }
+
+.heading-primary {
+  color: #fff;
+  text-transform: uppercase;
+  backface-visibility: hidden;
+  /* to hide the shake effect after the @animation */
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: moveInLeft;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.5s;
+    /* animation-iteration-count: 3; */ }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation-name: moveInRight;
+    animation-duration: 3s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.5s; }
 
 .btn {
   /* pseudo:: after: the element behind */
@@ -157,3 +126,58 @@ body {
   .btn--animated {
     animation: moveInBottom 2s ease-out .75s;
     animation-fill-mode: backwards; }
+
+/* height is 95% of the viewport */
+/* backgroud image linear-gradient adding on the top of the image, defined by coding order*/
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.7), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position-y: top;
+  /* clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0%,100%); */
+  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    left: 4rem;
+    top: 4rem; }
+  .header__logo {
+    height: 4rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* shift the left side 50% of where the box X(left) and Y(top) coordinate starts from */
+    text-align: center;
+    /* relating to the discover out tour area, does not need to adjust its position separately */ }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto;
+  background-color: #eee;
+  height: 50px; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+  .row::after {
+    content: "";
+    display: table;
+    clear: both; }
+  .row [class^="col-"] {
+    height: 30px;
+    background-color: orange;
+    float: left; }
+    .row [class^="col-"]:not(:last-child) {
+      margin-right: 6rem; }
+  .row .col-1-of-2 {
+    width: calc((100% - 6rem)/2); }
+  .row .col-1-of-3 {
+    width: calc((100% - 2 * 6rem)/3); }
+  .row .col-2-of-3 {
+    width: calc(2 * ((100% - 2 * 6rem)/3) + 6rem); }
+  .row .col-1-of-4 {
+    width: calc((100% - 3 * 6rem)/4); }
+  .row .col-2-of-4 {
+    width: calc(2*((100% - 3 * 6rem)/4) + 6rem); }
+  .row .col-3-of-4 {
+    width: calc(3 *((100% - 3 * 6rem)/4) + (2 * 6rem)); }
