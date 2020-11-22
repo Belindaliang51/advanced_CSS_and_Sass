@@ -4,7 +4,7 @@
   "description": "landing page for natours",
   "main": "index.js",
   "scripts": {
-    "compile:sass": "node-sass --include-path scss sass/main.scss css/style.css"
+    "compile:sass": "node-sass sass/main.scss css/style.css"
   },
   "repository": {
     "type": "git",
@@ -16,7 +16,9 @@
     "url": "https://github.com/Belindaliang51/advanced_CSS_and_Sass/issues"
   },
   "homepage": "https://github.com/Belindaliang51/advanced_CSS_and_Sass#readme",
-  "dependencies": {},
+  "dependencies": {
+    "live-server": "^1.2.1"
+  },
   "devDependencies": {
     "node-sass": "^5.0.0"
   }

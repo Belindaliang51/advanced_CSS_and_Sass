@@ -1,0 +1,24 @@
+/* basic reset, universial selector, select each element of the page, apply the decoration to the page */
+/* any "::after" and "::before" in the project will NOT get this behavior, only the real elements gets this behavior, to avoid strange behaviors later */
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    /*each element will be inherit to its parent element, relate to the "body"selector box-sizing*/
+}
+
+/* setting the root font-size, so that other font-sizes will change depends on it */
+/* 1rem = 10 x parent font-size */
+
+html {
+    font-size: 62.5%;
+    /* font-size:10px;  10/16=62.5%*/
+    /* inital font-size = 16px (100%) */
+}
+
+
+body {
+    box-sizing: border-box;
+}

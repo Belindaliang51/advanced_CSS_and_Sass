@@ -1,0 +1,38 @@
+/* height is 95% of the viewport */
+/* backgroud image linear-gradient adding on the top of the image, defined by coding order*/
+.header {
+    height: 95vh;
+    background-image: linear-gradient(to right bottom,
+            rgba($color-primary-light, 0.7), rgba($color-primary-dark,0.8)),
+        url(../img/hero.jpg);
+    background-size: cover;
+    background-position-y: top;
+
+    /* clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0%,100%); */
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
+    position: relative;
+
+    &__logo-box {
+        position: absolute;
+        left: 4rem;
+        top: 4rem;
+    }
+
+    &__logo {
+        height: 4rem;
+    }
+
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        /* shift the left side 50% of where the box X(left) and Y(top) coordinate starts from */
+
+        text-align: center;
+        /* relating to the discover out tour area, does not need to adjust its position separately */
+
+    }
+}
+
+
