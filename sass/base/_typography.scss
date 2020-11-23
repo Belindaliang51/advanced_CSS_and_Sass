@@ -45,3 +45,41 @@ body {
     }
 
 }
+
+.heading-secondary {
+    font-size: 3.5rem;
+    text-transform:uppercase;
+    font-weight: 700;
+    background-image: linear-gradient(to right, $color-primary-light, $color-primary-dark);
+    display:inline-block;
+
+    -webkit-background-clip: text;
+    // to set the backgroud and its color to clip as the shape of the text are.
+    color: transparent;
+    // to make the background color is on top of the text
+
+    letter-spacing: 0.2rem;
+    transition: all 0.2s;
+
+    &:hover{
+        transform: skewX(2deg) skewY(-5deg) scale(1.1);
+
+        text-shadow: 0.5rem 1rem 2rem rgba($color-black, 0.2) ;
+    }
+}
+
+
+.heading-tertiary{
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+}
+
+.paragraph{
+    font-size: 1.6rem;
+
+    &:not(:last-child){
+        margin-bottom: 3rem;
+    }
+}
