@@ -77,7 +77,7 @@
         color:$color-primary-dark;
         display: inline-block;
         text-decoration: none;
-        padding: 3px;
+        padding: 0.3rem;
         border-bottom: 1px solid $color-primary-dark;
         transition: all 0.2s;
     }
@@ -85,6 +85,7 @@
     &:hover{
         background-color: $color-primary-dark;
         color:$color-white;
+        border-radius:0.5rem;
         box-shadow: 0 1rem 2rem rgba($color-black, 0.2);
         transform: translateY(-2px);
     }
