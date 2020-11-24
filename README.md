@@ -13,8 +13,11 @@ Card section
 Use perspective define at the parent element
     The lower the value the more dramatic the flip effect 
 
-
 Card flip effect
     set backside rotate to 180 degree as default setting 
-Set the backface-visibility property 
-Use the box-decoration-break to edit the subtitles for each card
+    Set the backface-visibility property 
+
+The background blend mode to blend the background image and picture together without using photoshop to do so;
+
+
+Use the box-decoration-break to edit the subtitles for each card especially when the text is wrapped to show the outline layout to align one another 

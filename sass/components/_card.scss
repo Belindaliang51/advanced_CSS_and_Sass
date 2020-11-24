@@ -1,4 +1,5 @@
 .card{
+    // FUNCTIONALITY
     perspective: 150rem;
     -moz-perspective: 150rem;
     position: relative;
@@ -15,6 +16,13 @@
         backface-visibility: hidden; 
         height:50rem;
 
+        // to avoid image collaps float and collaps the border
+        overflow: hidden;
+
+        // border
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+
 
         &--front{
 
@@ -23,9 +31,12 @@
 
 
         &--back {
-            background-color: green;
-            transform: rotateY(180deg) 
+            transform: rotateY(180deg);
             // set the back side to rotate as default
+
+            &-1{
+                background-image:linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark)
+            }
         }
     }
     
@@ -40,4 +51,36 @@
      }
     //  when hover the card, the back side rotate along the Y from 180 degree to 0 degree
     
+    &__picture {
+        background-size:cover;
+        height: 23rem; //set height to show the expected image 
+        background-blend-mode: screen;
+        -webkit-clip-path:polygon(0 0, 100% 0, 100% 85%, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+        &--1{
+            background-image:linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark), url("../../img/nat-5.jpg")
+        }
+
+        &--2 {
+            background-image: url("../../img/nat-6.jpg")
+        }
+
+        &--3 {
+            background-image: url("../../img/nat-7.jpg")
+        }
+    }
+
+    &__heading{
+        font-size:2.5rem;
+        font-weight: 300;
+        text-transform: uppercase;
+        text-align: right;
+        color:$color-white;
+        position: absolute;
+        top:12rem;
+        right:2rem;
+    }
+
+     
 }
