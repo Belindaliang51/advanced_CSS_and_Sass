@@ -45,6 +45,17 @@
 
     }
 
+    &--green {
+        background-color: $color-primary-dark;
+        color: $color-white;
+
+        &::after {
+            background-color: $color-white;
+            border-radius: 10rem;
+        }
+
+    }
+
     /* pseudo:: after: the element behind */
     /* persudo::after as the child element of the parent element, the display, height, width are setting align with the original btn setting*/
     &::after {
