@@ -3,11 +3,11 @@
     perspective: 150rem;
     -moz-perspective: 150rem;
     position: relative;
-    height:50rem;
+    height:52rem;
     // height need to define in both .card and its direct child element, because the all the elements are floated, child element is at the position absolute, so it is also taken out of the nature flow. Therefore the parent collapsed and lost its height if not defining the height in both.
 
     &__side{
-        height:50rem;
+        height:52rem;
         transition: all 2s ease;
         position: absolute;
         top:0;
@@ -50,7 +50,9 @@
          transform: rotateY(0)
      }
     //  when hover the card, the back side rotate along the Y from 180 degree to 0 degree
-    
+
+
+    //FRONT SIDE STYLYING    
     &__picture {
         background-size:cover;
         height: 23rem; //set height to show the expected image 
@@ -80,7 +82,67 @@
         position: absolute;
         top:12rem;
         right:2rem;
+        width:75%;
     }
 
-     
+    &__heading-span{
+        padding:1rem 1.5rem;
+        -webkit-box-decoration-break:clone;
+        box-decoration-break:clone;
+
+        
+
+        &--1{
+            background-image: linear-gradient(to right bottom, 
+            rgba($color-secondary-light, 0.85),
+            rgba($color-secondary-dark, 0.85));
+           
+        }
+    }
+
+     &__details{
+          padding:3rem;
+         ul{
+             list-style: none; 
+             width: 80%;
+             margin:0 auto;
+            
+             li{
+                text-align: center;
+                font-size:1.5rem;
+                padding: 1rem;
+
+                &:not(:last-child){
+                    border-bottom: 1px solid $color-grey-light-2;
+                }
+
+            }
+         }
+     }
+
+
+
+  //BACK SIDE STYLYING  
+  &__cta{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width:90%;
+    text-align: center;
+  }
+
+  &__price-box{
+    color:$color-white;
+    margin-bottom: 8rem;
+  }
+  &__price-only{
+    font-size:1.4rem;
+    text-transform: uppercase;
+  }
+  &__price-value{
+    font-size: 6rem;
+    font-weight: 100;
+  }
+
 }
