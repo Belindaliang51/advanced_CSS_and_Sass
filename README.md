@@ -10,6 +10,11 @@ Move the margin top by -15rem to connet the top left corner with the about secti
 
 Card section 
 ----------------------------------
-Use perspective in CSS
+Use perspective define at the parent element
+    The lower the value the more dramatic the flip effect 
+
+
+Card flip effect
+    set backside rotate to 180 degree as default setting 
 Set the backface-visibility property 
-Use the box-decoration-break
+Use the box-decoration-break to edit the subtitles for each card
