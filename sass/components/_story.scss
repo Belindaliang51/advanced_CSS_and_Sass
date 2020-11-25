@@ -1,0 +1,70 @@
+
+.story{
+    width:75%;
+    margin:0 auto;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+    background-color: rgba($color-white , 0.6);
+    border-radius:3px;
+    padding:6rem;
+    padding-left:9rem;
+    font-size: $default-font-size;
+    transform:skewX(-12deg);
+
+    // &>* direct child element is not working this time because of the img setting and text are different, they have to set up seperatly
+
+    &__shape{
+        width:15rem;
+        height:15rem;
+        float:left;
+
+        // define where the content/text to float around the elements, this case is a circle
+        -webket-shape-outside:circle(50% at 50% 50%);
+        shape-outside:circle(50% at 50% 50%);
+
+        // Make the element itself to look like a circle, using the clip-path property
+        -webkit-clip-path:circle(50% at 50% 50%);
+        clip-path:circle(50% at 50% 50%);
+
+        transform:translateX(-3rem) skewX(12deg);
+
+        position: relative;
+    }
+
+    &__img{
+        height: 100%;
+        transform: scale(1.4);
+        
+    }
+
+    &__caption {
+        position: absolute;
+        font-size:1.5rem;
+        top:50%;
+        right:50%;
+        transform: translate(50%, 20%);
+        color:$color-white;
+        text-transform: uppercase;
+        text-align: center;
+        opacity:0;
+        transition:all 0.8s;
+        backface-visibility: hidden;
+    }
+
+    &:hover &__caption{
+        opacity: 1;
+        transform: translate(50%, -50%);
+    }
+
+    &:hover &__img{
+        transform: scale(1);
+        filter: blur(3px) brightness(80%);
+    }
+
+    &__text{
+        transform:skewX(12deg);
+    }
+
+
+
+
+}

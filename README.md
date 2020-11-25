@@ -20,4 +20,16 @@ Card flip effect
 The background blend mode to blend the background image and picture together without using photoshop to do so;
 
 
-Use the box-decoration-break to edit the subtitles for each card especially when the text is wrapped to show the outline layout to align one another 
+Use the box-decoration-break to edit the subtitles for each card especially when the text is wrapped to show the outline layout to align one another.
+
+Stories Section
+-----------------------------------
+Make text flow around shapes with shape-outside and float;
+
+Apply a filter to images;
+
+Create a background video to covering an entire section; 
+
+Use the <video>HTML element;
+
+Use the object-fit property;
