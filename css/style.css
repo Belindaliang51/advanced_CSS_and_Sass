@@ -120,6 +120,20 @@ body {
 .u-margin-top-big {
   margin-top: 8rem; }
 
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: .15;
+  z-index: -1;
+  overflow: hidden; }
+  .bg-video__content {
+    height: 100%;
+    width: 100%;
+    object-fit: cover; }
+
 .btn {
   /* pseudo:: after: the element behind */
   /* persudo::after as the child element of the parent element, the display, height, width are setting align with the original btn setting*/ }
@@ -448,4 +462,4 @@ body {
 
 .section-stories {
   padding: 15rem 0;
-  background-color: #eee; }
+  position: relative; }
