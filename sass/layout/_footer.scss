@@ -1,0 +1,60 @@
+
+
+.footer{
+    background-color:$color-grey-dark-3;
+    padding:10rem 0;
+    font-size:1.4rem;
+    color:$color-grey-light-1;
+
+
+    &__logo-box{
+        text-align:center;
+        margin-bottom:8rem;
+
+    }
+
+
+    &__logo{
+        width:15rem;
+        height:auto;
+
+    }
+
+    &__navigation{
+        border-top: 2px solid $color-grey-dark;
+        padding-top:2rem;
+       
+        //to adjust the border line align with the text rather the 100% of the selector width
+        display:inline-block;
+    }
+
+    &__list{
+        list-styl: none;
+    }
+
+    &__item{
+        display:inline-block;
+        &:not(:last-child){
+            margin-right:1.5rem;
+        }
+    }
+
+    &__link{
+        &:link,
+        &:visited{
+            color:$color-grey-light-1;
+            text-decoration:none;
+            text-transform:uppercase;
+            display:inline-block;
+        }
+
+        &:hover,
+        &:active{
+            color:$color-primary;
+            box-shadow:0 1rem 2rem rgba($color-black, 0.4);
+            transform:scale(1.2);
+        }
+    }
+
+
+}

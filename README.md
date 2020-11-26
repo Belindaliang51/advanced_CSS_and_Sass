@@ -42,3 +42,7 @@ linear-gradient to divide the background image to two views.
 ::-webkit-place-holder selector to change the content of the placeholder text
 
 Verify the input types by different color of the box bottom line.
+
+Footer section
+--------------------------------------
+General page footer setting, copyright and other information.
