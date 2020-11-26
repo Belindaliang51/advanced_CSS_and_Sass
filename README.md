@@ -32,4 +32,13 @@ Create a background video to covering an entire section;
 
 Use the <video>HTML element;
 
-Use the object-fit property;
+Use the object-fit property to adjust the video ratios to fit with the section;
+
+
+Booking section 
+--------------------------------------
+linear-gradient to divide the background image to two views.
+
+::-webkit-place-holder selector to change the content of the placeholder text
+
+Verify the input types by different color of the box bottom line.
