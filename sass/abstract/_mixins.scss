@@ -13,3 +13,53 @@
     left:50%;
     transform: translate(-50%, -50%);
 }
+
+
+// MEDIA QUERY FOR DESKTOP
+/*
+0 - 600 : Phone
+600px - 900px: Tablet portrait
+900px - 1200px: Tablet landscape
+1200px - 1800px is where the normal style apply
+1800px + : Large desktop
+
+breakpoint
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+1em = 16px;
+rem is not working by some browser when setting the root element of the page
+
+Documents Edit Order: base(root)-->typography-->general layout-->grid-->page layout-->components
+
+base.scss -- the over all font size change takes care the most adjustment, other documents just need minor adjustments
+*/
+
+@mixin respond($breakpoint){
+    @if $breakpoint==phone{
+        @media (max-width: 37.5em){  //600px
+            @content
+        };
+    }
+    @if $breakpoint==tab-port{
+        @media (max-width: 56.25em){ //900px
+            @content
+        };
+    }
+    @if $breakpoint==tab-land{
+        @media (max-width: 75em) {
+            //1200px
+            @content
+        };
+    }
+    @if $breakpoint==big-desktop{
+        @media (max-width: 112.5em) {
+            //1800px
+            @content
+        };
+    }
+    
+
+}

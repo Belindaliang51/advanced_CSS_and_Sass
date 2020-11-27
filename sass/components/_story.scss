@@ -12,6 +12,11 @@
 
     // &>* direct child element is not working this time because of the img setting and text are different, they have to set up seperatly
 
+    @include respond(tab-port) {
+        width:100%;
+        padding: 4rem;
+    }
+
     &__shape{
         width:15rem;
         height:15rem;

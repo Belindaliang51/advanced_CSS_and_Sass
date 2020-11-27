@@ -6,6 +6,10 @@
     font-size:1.4rem;
     color:$color-grey-light-1;
 
+    @include respond(tab-port){
+        padding: 8rem 0;
+    }
+
 
     &__logo-box{
         text-align:center;
@@ -26,6 +30,11 @@
        
         //to adjust the border line align with the text rather the 100% of the selector width
         display:inline-block;
+
+        @include respond(tab-port) {
+            width:100%;
+            text-align: center;
+        }
     }
 
     &__list{

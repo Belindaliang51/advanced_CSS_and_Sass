@@ -1,3 +1,23 @@
+/*
+0 - 600 : Phone
+600px - 900px: Tablet portrait
+900px - 1200px: Tablet landscape
+1200px - 1800px is where the normal style apply
+1800px + : Large desktop
+
+breakpoint
+-phone
+-tab-port
+-tab-land
+-big-desktop
+
+1em = 16px;
+rem is not working by some browser when setting the root element of the page
+
+Documents Edit Order: base(root)-->typography-->general layout-->grid-->page layout-->components
+
+base.scss -- the over all font size change takes care the most adjustment, other documents just need minor adjustments
+*/
 /* Animation */
 @keyframes moveInLeft {
   0% {
@@ -43,17 +63,32 @@ html {
   font-size: 62.5%;
   /* font-size:10px;  10/16=62.5%*/
   /* inital font-size = 16px (100%) */ }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (max-width: 37.5em) {
+    html {
+      font-size: 37.5%; } }
+  @media (max-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 /* properties related to font is inherited, so edit in body element */
 body {
   font-family: "Lato", sans-serif;
   /* font-size:16px; */
   line-height: 1.7;
-  columns: #777;
-  padding: 30px; }
+  columns: #777; }
 
 .heading-primary {
   color: #fff;
@@ -71,6 +106,13 @@ body {
     animation-timing-function: ease-in;
     animation-delay: 0.5s;
     /* animation-iteration-count: 3; */ }
+    @media (max-width: 56.25em) {
+      .heading-primary--main {
+        font-family: 5rem;
+        letter-spacing: 2rem; } }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1.5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -80,6 +122,12 @@ body {
     animation-duration: 3s;
     animation-timing-function: ease-in;
     animation-delay: 0.5s; }
+    @media (max-width: 56.25em) {
+      .heading-primary--sub {
+        letter-spacing: 2rem; } }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: 1rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -88,9 +136,16 @@ body {
   background-image: linear-gradient(to right, #55c57a, #28b485);
   display: inline-block;
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   letter-spacing: 0.2rem;
   transition: all 0.2s; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 3rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
   .heading-secondary:hover {
     transform: skewX(2deg) skewY(-5deg) scale(1.1);
     text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.2); }
@@ -272,7 +327,7 @@ body {
     .card__heading-span--3 {
       background-image: linear-gradient(to right bottom, rgba(41, 152, 255, 0.85), rgba(86, 67, 250, 0.85)); }
   .card__details {
-    padding: 3rem; }
+    padding: 1rem, 3rem; }
     .card__details ul {
       list-style: none;
       width: 80%;
@@ -299,6 +354,38 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
+  @media (max-width: 56.25em) {
+    .card {
+      height: auto;
+      border-radius: 3px;
+      background-color: #fff; }
+      .card__side {
+        height: auto;
+        transition: all 0.8s ease;
+        position: relative;
+        box-shadow: none; }
+        .card__side--back {
+          transform: rotateY(0);
+          clip-path: polygon(0% 15%, 100% 0%, 100% 100%, 0% 100%); }
+          .card__side--back-1 {
+            background-image: linear-gradient(to right bottom, #ffb900, #ff7730); }
+          .card__side--back-2 {
+            background-image: linear-gradient(to right bottom, #55c57a, #28b485); }
+          .card__side--back-3 {
+            background-image: linear-gradient(to right bottom, #2998ff, #5643fa); }
+      .card:hover .card__side--front {
+        transform: rotateY(0); }
+      .card__cta {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: translate(0);
+        width: 100%;
+        padding: 2rem; }
+      .card__price-box {
+        margin-bottom: 3rem; }
+      .card__price-value {
+        font-size: 6rem; } }
 
 .composition {
   position: relative; }
@@ -310,15 +397,35 @@ body {
     z-index: 10;
     transition: all 0.2s;
     outline-offset: 2rem; }
+    @media (max-width: 56.25em) {
+      .composition__photo {
+        position: relative;
+        float: left;
+        width: 33.33%;
+        box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3); } }
     .composition__photo--p1 {
       left: 0;
       top: -2rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p1 {
+          top: 0;
+          transform: scale(1.2); } }
     .composition__photo--p2 {
       right: 0;
       top: 2rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p2 {
+          top: -1rem;
+          transform: scale(1.3);
+          z-index: 100; } }
     .composition__photo--p3 {
       left: 20%;
       top: 10rem; }
+      @media (max-width: 56.25em) {
+        .composition__photo--p3 {
+          top: 1rem;
+          left: 0;
+          transform: scale(1.1); } }
     .composition__photo:hover {
       z-index: 20;
       box-shadow: 0 2.5rem 4rem rgba(0, 0, 0, 0.5);
@@ -333,7 +440,7 @@ body {
   padding: 2.5rem;
   text-align: center;
   border-radius: 3px;
-  border-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+  box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
   transition: transform 0.2s; }
   .feature-box__icon {
     font-size: 6rem;
@@ -440,6 +547,10 @@ body {
   padding-left: 9rem;
   font-size: 1.6rem;
   transform: skewX(-12deg); }
+  @media (max-width: 56.25em) {
+    .story {
+      width: 100%;
+      padding: 4rem; } }
   .story__shape {
     width: 15rem;
     height: 15rem;
@@ -479,6 +590,9 @@ body {
   padding: 10rem 0;
   font-size: 1.4rem;
   color: #f7f7f7; }
+  @media (max-width: 56.25em) {
+    .footer {
+      padding: 8rem 0; } }
   .footer__logo-box {
     text-align: center;
     margin-bottom: 8rem; }
@@ -489,6 +603,10 @@ body {
     border-top: 2px solid #777;
     padding-top: 2rem;
     display: inline-block; }
+    @media (max-width: 56.25em) {
+      .footer__navigation {
+        width: 100%;
+        text-align: center; } }
   .footer__list {
     list-styl: none; }
   .footer__item {
@@ -513,12 +631,22 @@ body {
   background-size: cover;
   background-position-y: top;
   /* clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0%,100%); */
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
   clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
   position: relative; }
+  @media (max-width: 37.5em) {
+    .header {
+      -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%);
+      clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 0% 100%); } }
   .header__logo-box {
     position: absolute;
     left: 4rem;
     top: 4rem; }
+    @media (max-width: 56.25em) {
+      .header__logo-box {
+        left: 50%;
+        top: 10%;
+        transform: translate(-50%, -50%); } }
   .header__logo {
     height: 4rem; }
   .header__text-box {
@@ -535,6 +663,13 @@ body {
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media (max-width: 56.25em) {
+    .row {
+      max-width: 50%;
+      padding: 0 3rem; } }
   .row::after {
     content: "";
     display: table;
@@ -543,6 +678,13 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100% !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem)/2); }
   .row .col-1-of-3 {

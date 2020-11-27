@@ -63,9 +63,12 @@ Make responsive page
 -- Adapt the page to different screen sizes
 -----------------------------------
 Use Sass mixin to write all media queries;
-
-Use @content and @if Sass directives;
+    
+Use @content,  to adding settings into the original @mixin argument;
+    
+Use @if statement to work with @mixin to include all breakpoints in to one argument;
 
 Taking advantage of Chrome DevTool for responsive design.
+
 
 Use srcset attribute width description and size attribute of the <img> element to allow the browser to decide the best image to download.

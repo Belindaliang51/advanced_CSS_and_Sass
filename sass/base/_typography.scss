@@ -5,7 +5,7 @@ body {
     /* font-size:16px; */
     line-height: 1.7;
     columns: $color-grey-dark;
-    padding: 30px;
+    
 }
 
 
@@ -30,6 +30,14 @@ body {
         animation-delay: 0.5s;
         /* animation-iteration-count: 3; */
 
+        @include respond(tab-port) {
+             font-family: 5rem;
+             letter-spacing:2rem;
+        }
+        @include respond(phone) {
+            letter-spacing: 1.5rem;
+        }
+
     }
 
     &--sub {
@@ -42,6 +50,14 @@ body {
         animation-duration: 3s;
         animation-timing-function: ease-in;
         animation-delay: 0.5s;
+
+
+        @include respond(tab-port) {
+            letter-spacing: 2rem;
+        }
+        @include respond(phone) {
+            letter-spacing: 1rem;
+        }
     }
 
 }
@@ -54,12 +70,21 @@ body {
     display:inline-block;
 
     -webkit-background-clip: text;
+    background-clip: text;
     // to set the backgroud and its color to clip as the shape of the text are.
     color: transparent;
     // to make the background color is on top of the text
 
     letter-spacing: 0.2rem;
     transition: all 0.2s;
+
+    @include respond(tab-port) {
+        font-size: 3rem;
+    }
+
+    @include respond(phone) {
+        font-size: 2.5rem;
+    }
 
     &:hover{
         transform: skewX(2deg) skewY(-5deg) scale(1.1);
