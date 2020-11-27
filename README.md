@@ -57,3 +57,15 @@ Use display:table at the parent element and display:table-cell in the child elem
 Use vertical-align: middle, to set the content in the table cell in the position of middle in the cell.
 
 Use hyphens to automatically hyphenate words
+
+
+Make responsive page
+-- Adapt the page to different screen sizes
+-----------------------------------
+Use Sass mixin to write all media queries;
+
+Use @content and @if Sass directives;
+
+Taking advantage of Chrome DevTool for responsive design.
+
+Use srcset attribute width description and size attribute of the <img> element to allow the browser to decide the best image to download.
