@@ -41,14 +41,14 @@ linear-gradient to divide the background image to two views.
 
 ::-webkit-place-holder selector to change the content of the placeholder text
 
-Verify the input types by different color of the box bottom line.
+:focus and :focus:invalid to verify the input types by different color of the box bottom line.
 
 Footer section
 -----------------------------------
 General page footer setting, copyright and other information.
 
 
-Bonus - pop up with only CSS 
+Bonus - pop up function with only CSS
 -----------------------------------
 Use ::target pseudo-class, to implement the pop up;
 
@@ -70,5 +70,17 @@ Use @if statement to work with @mixin to include all breakpoints in to one argum
 
 Taking advantage of Chrome DevTool for responsive design.
 
-
+Doing the responsive image in HTML
+1. Density switching
+2. Art direction
 Use srcset attribute width description and size attribute of the <img> element to allow the browser to decide the best image to download.
+
+
+Building Process with NPM Scripts
+-----------------------------------
+   <code> "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver":"live-server",
+    "start":"npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.scss css/style.comp.css",
+    "concat:css": "concat -o css/style.concat.css css/icon-font.css css/style.comp.css",
+    "build:css": "npm-run-all compile:sass concat:css "</code>

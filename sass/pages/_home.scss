@@ -48,13 +48,55 @@
                                         url("../img/nat-10.jpg");
 
     background-size:100%;  
-    // backgroudn-size:cover --both are the same
-    height: 50rem;
+    // similar to <backgroudn-size:cover>, different is to fit the background in the "X" direction 
+
     border-radius: 3px;
     box-shadow:0 1.5rem 4rem, rgba($color-black, 0.2);
+
+
+    @include respond(tab-land){
+        background-image: linear-gradient(105deg,
+            rgba($color-white, .9) 0%,
+            rgba($color-white, .9) 65%,
+            transparent 65%),
+        url("../img/nat-10.jpg");
+        background-size:cover;
+    }
+
+    @include respond(tab-port){
+    background-image: linear-gradient(to right,
+    rgba($color-white, 0.8) 0%,
+    rgba($color-white, .8) 100%),
+    url("../img/nat-10.jpg");
+    background-size:cover;
+    }
+     @include respond(phone) {
+         background-image: linear-gradient(to right,
+                 rgba($color-white, 0.8) 0%,
+                 rgba($color-white, .8) 100%),
+        url("../img/nat-10.jpg");
+         background-size: cover;
+     }
 
     &__form{
         width:50%;
         padding: 6rem;
+
+         @include respond(tab-land){
+             width:65%;
+         }
+         @include respond(tab-port) {
+             width:100%;  
+         }
+
+         @include respond(phone) {
+             padding:4rem;
+         }
+    }
+
+    &__btn-small{
+        @include respond(phone){
+            padding:0 1rem;
+        }
     }
 }
